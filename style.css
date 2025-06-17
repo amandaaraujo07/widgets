@@ -314,6 +314,7 @@ canvas {
     margin-right: auto;
 }
 
+
 .lista-tarefas h2 {
     margin-top: 0;
     font-size: 1.4em;
@@ -392,19 +393,22 @@ canvas {
     text-align: center;
     margin: 20px auto;
     position: relative;
-    width: 600px;
+    width: 100%;
     border: 5px solid #5053F8;
     box-sizing: border-box;
     border-radius: 20px;
 }
 
 /* MÚSICA */
+/* .juncao{
+    width: 100%;
+} */
 #musica {
     background-color: #EEF8FF; /* Fundo claro */
     border: 5px solid #5053F8; /* Borda com cor consistente */
     border-radius: 20px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    width: 300px; /* Largura fixa */
+    /* padding: 20px; Espaçamento interno */
+    /* width: 100%; Largura fixa */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     text-align: center; /* Centraliza o texto */
     margin-left: 10px;
@@ -481,8 +485,8 @@ canvas {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 350px;
+    /* padding: 20px; */
+    /* width: 350px; */
     height: 315px;
     margin-top: 50px;
     border: 5px solid #5053F8;
