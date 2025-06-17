@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>WIDGET</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="saudacao-hora">
+            <div id="dataAtual"></div>
+            <div id="relogio"></div>
+        </div>
+        <div id="saudacao"></div>
+
+        <div class="weather-widget">
+            <h2>Previsão do Tempo</h2>
+            <input type="text" id="citySearch" placeholder="Digite o nome da cidade" />
+            <button id="searchWeather">Pesquisar</button>
+            <div id="weatherInfo">Carregando...</div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14817.494220209224!2d-50.8768643!3d-21.8044932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1749561057660!5m2!1sen!2sbr" width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="notas">
+            <textarea id="meuBlocoDeNotas">    Escreva suas notas aqui... </textarea>
+            <br>
+            <button class="botao-salvar" onclick="salvarNotas()">Salvar</button>
+        </div>
+    </div>
+
+    <div class="quadro">
+        <div class="quadroDesenho">
+            <div class="area-desenho">
+                <canvas id="quadro" width="600" height="400"></canvas>
+                    <div class="opcoes-desenho">
+                        <label>Cor:
+                            <input type="color" id="cor" value="#000000">
+                        </label>
+                        
+                        <label>Modo:
+                            <select id="modo">
+                                <option value="livre">Desenho Livre</option>
+                                <option value="linha">Linha</option>
+                                <option value="retangulo">Retângulo</option>
+                                <option value="circulo">Círculo</option>
+                                <option value="borracha">Borracha</option>
+                            </select>
+                        </label>
+                        
+                        <label>Espessura:
+                            <input type="range" id="espessura" min="1" max="20" value="2">
+                        </label>
+                        
+                        <button id="limpar">Limpar</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="quadradoLista">  
+            <div class="listaTarefasContainer">
+                <h2>Lista de Tarefas</h2>
+                <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa" />
+                <button id="adicionarTarefa">Adicionar</button>
+                <ul id="listaTarefas"></ul>
+            </div>
+        </div>
+
+        <div class="camera">
+            <div class="container">
+                <div>
+                    <video id="webcamVideo" autoplay playsinline></video>
+                    <div class="controls">
+                        <button id="btnLigarCamera">Ligar Câmera</button>
+                        <button id="btnDesligarCamera" style="display:none;">Desligar Câmera</button>
+                        <button id="btnTirarFoto" style="display:none;">Tirar Foto</button>
+                        <button id="btnAplicarFiltro" style="display:none;">Aplicar Filtro</button>
+                    </div>
+                </div>
+                <div>
+                    <canvas id="canvasFoto"></canvas>
+                    <button id="btnApagarFoto">Apagar Foto</button>
+                    <a id="downloadLink">Baixar Foto</a>
+                </div>
+            </div>
+        </div>
+        <p id="status" class="camera"></p>
+    </div>        
+
+    <div class="juncao">
+        <div id="musica">
+            <img id="musica-capa" src="https://i.imgur.com/8Km9tLL.jpg" alt="Capa do álbum">
+            <div class="detalhes">
+                <h4 id="musica-nome">Nome da Música</h4>
+                <p id="artista">Artista</p>
+                <div class="progress-bar">
+                    <span id="tempo-atual">0:00</span>
+                    <input type="range" id="progresso" value="0" min="0" max="100">
+                    <span id="tempo-total">0:00</span>
+                </div>
+            </div>
+          
+            <div class="controles">
+                <button id="btn-anterior">⏮</button>
+                <button id="botao"><span id="icone">▶</span></button>
+                <button id="btn-proximo">⏭</button>
+            </div>
+        </div>
+        <audio id="audio-player"></audio>
+
+        <div class="calendario-container">
+            <div class="calendar-header">
+                <button class="meses" id="prevMonth">❰</button>
+                <h3 class="mes" id="currentMonthYear"></h3>
+                <button class="meses" id="nextMonth">❱</button>
+            </div>
+            <div class="dias">
+                <span>Dom</span>
+                <span>Seg</span>
+                <span>Ter</span>
+                <span>Qua</span>
+                <span>Qui</span>
+                <span>Sex</span>
+                <span>Sáb</span>
+            </div>
+            <div id="calendarGrid" class="calendar-grid"></div>
+        </div>
+
+        <div class="calculadora">
+            <input type="text" class="display"/>
+            <div class="buttonsCalculadora">
+                <button class="operator" data-value="AC"> AC </button>
+                <button class="operator" data-value="DEL"> DEL </button>
+                <button class="operator" data-value="%"> % </button>
+                <button class="operator" data-value="/"> / </button>
+
+                <button data-value="7"> 7 </button>
+                <button data-value="8"> 8 </button>
+                <button data-value="9"> 9 </button>
+                <button class="operator" data-value="*"> * </button>
+
+                <button data-value="4"> 4 </button>
+                <button data-value="5"> 5 </button>
+                <button data-value="6"> 6 </button>
+                <button class="operator" data-value="-"> - </button>
+
+                <button data-value="1"> 1 </button>
+                <button data-value="2"> 2 </button>
+                <button data-value="3"> 3 </button>
+                <button class="operator" data-value="+"> + </button>
+
+                <button data-value="00"> 00 </button>
+                <button data-value="0"> 0 </button>
+                <button data-value="."> . </button>
+                <button class="operator" data-value="="> = </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>

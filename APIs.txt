@@ -1,0 +1,18 @@
+API CLIMA
+chave de API: http://dataservice.accuweather.com/currentconditions/v1/​{locationKey}
+http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={1936e3e472c9fc2db31965b0b6fbe402}
+
+API CALENDÁRIO
+chave de API: HT08gXOCk3K3hq90O5Gv63DdPFxlDiRL
+
+API MÚSICA
+
+API JOGOS
+chave de API: https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1
+
+API DE ESPORTE
+chave de API: https://v3.football.api-sports.io/
+
+API DE NOTÍCIAS
+chave de API: WGKbFlD4dvKmLqG-pfcO8P5xzUhIK2CaWEZSgIbxhxdLNDiY
+

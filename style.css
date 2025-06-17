@@ -1,0 +1,731 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EEF8FF;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+}
+
+.geral {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.menu {
+    background-color: #CCE7FF;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #5053F8;    
+    width: 300px;
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+#dataAtual {
+    font-size: 18px;
+    color: #000000;
+    padding: 10px;
+}
+
+#saudacao {
+    font-size: 20px;
+    color: #000000;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#relogio {
+    font-size: 25px;
+    color: #000000;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #EEF8FF;
+    height: 25px;
+    border-radius: 15px;
+}
+
+.saudacao-hora {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os elementos */
+}
+
+/* MAPA */
+.map-container {
+    text-align: center;
+    margin: 20px;
+    height: 200px;
+    width: 260px;
+}
+
+/* BLOCO DE NOTAS */
+#meuBlocoDeNotas {
+    background-color: rgb(226, 238, 250);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 5px;
+    border: 5px solid #5053F8;    
+    width: 255px;
+    height:100px;
+}
+
+.botao-salvar {
+    background-color: #5053F8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* QUADRO DE PINTURA */
+.quadroDesenho {
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    width: 600px;
+    height: 410px;
+    border: 5px solid #5053F8;
+    box-sizing: border-box; /* Inclui bordas no cálculo de largura/altura */
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: 0px;
+}
+
+.area-desenho {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ajusta para ocupar toda a largura do contêiner */
+    height: 400px; /* Define a altura da área de desenho */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Inclui bordas no cálculo de largura/altura */
+    border-radius: 20px;
+}
+
+.opcoes-desenho {
+    position: absolute;
+    top: 0; /* Posiciona no topo do quadro */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    gap: 15px; 
+    border-radius: 5px 5px 0 0; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Garante que fique acima do canvas */
+}
+
+canvas {
+    display: block;
+    width: 100%; /* Faz o canvas ocupar toda a largura da área de desenho */
+    height: calc(100% - 50px); /* Ajusta a altura para deixar espaço para as opções */
+    cursor: crosshair;
+}
+
+.opcoes-desenho label,
+.opcoes-desenho button {
+    margin-right: 0; /* Remove margens verticais */
+    font-size: 14px; /* Ajusta o tamanho da fonte */
+}
+
+.opcoes-desenho button {
+    margin-right: 15px; /* Adiciona margem à esquerda do botão */
+    padding: 5px 10px;
+    border: none;
+    background-color: #5053F8;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opcoes-desenho button:hover {
+    background-color: #6e6ed3;
+}
+
+#modo {
+    padding: 3px; 
+    border: 2px solid #5053F8; 
+    border-radius: 5px; 
+    background-color: #EEF8FF; 
+    color: #000; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+#modo:hover {
+    background-color: #CCE7FF; /* Cor de fundo ao passar o mouse */
+    border-color: #6e6ed3; /* Cor da borda ao passar o mouse */
+}
+
+/* CLIMA */
+.weather-widget {
+    background-color: rgb(226, 238, 250);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.weather-widget input {
+    padding: 10px;
+    width: 70%;
+    margin-bottom: 10px;
+    border: 1px solid #4c21c3;
+    border-radius: 5px;
+}
+
+.weather-widget button {
+    padding: 10px 20px;
+    background-color: #5053F8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.weather-widget button:hover {
+    background-color: #6e6ed3;
+}
+
+.weather-widget img {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+/* CAMERA */
+.camera {
+    flex: 0.5; 
+    text-align: center; 
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.foto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    
+}
+
+.p camera{
+    font-size: 18px;
+    color: #000000;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#webcamVideo {
+    width: 320px;
+    height: 240px;
+    border: 2px solid black;
+    background-color: #333;
+    border: 5px solid #5053F8;
+    border-radius: 20px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none; 
+    background-color: #5053F8; 
+    color: white; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 14px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+    background-color: #6e6ed3; 
+    transform: scale(1.05);
+}
+
+#canvasFoto {
+    width: 320px;
+    height: 240px;
+    border: 2px solid black;
+    display: none;
+}
+
+#btnApagarFoto, #downloadLink {
+    display: inline-block; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #dc3545; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+#btnApagarFoto:hover {
+    background-color: #a71d2a; 
+    transform: scale(1.05); 
+}
+
+#downloadLink {
+    background-color: #28a745; 
+}
+
+#downloadLink:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
+}
+
+/* LISTA DE TAREFAS */
+.lista-tarefas {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-tarefas h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #333;
+    text-align: center;
+}
+
+#novaTarefa {
+    width: calc(100% - 150px); 
+    padding: 10px;
+    border: 2px solid #5053F8;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.lista-tarefas button {
+    padding: 10px 16px;
+    margin-left: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lista-tarefas button:hover {
+    background-color: #0056b3;
+}
+
+.lista-tarefas ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.lista-tarefas li {
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+#adicionarTarefa {
+    background-color: #007bff;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+}
+
+.lista-tarefas li:hover {
+    background-color: #e2e6ea;
+}
+
+.lista-tarefas li button {
+    background-color:tra;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 4px;
+    margin-top: 20px;
+}
+
+.lista-tarefas li button:hover {
+    color: #a71d2a;
+}
+
+.quadradoLista {
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    width: 600px;
+    border: 5px solid #5053F8;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+/* MÚSICA */
+#musica {
+    background-color: #EEF8FF; /* Fundo claro */
+    border: 5px solid #5053F8; /* Borda com cor consistente */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    width: 300px; /* Largura fixa */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    text-align: center; /* Centraliza o texto */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#musica-capa {
+    border-radius: 10px; 
+    margin-bottom: 5px;
+    width: 150px; /* Largura da imagem */
+}
+
+.detalhes {
+    margin-bottom: 15px;
+}
+
+#musica-nome {
+    font-size: 15px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+#artista {
+    font-size: 16px; 
+    color: #666; 
+}
+
+.progress-bar {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+#progresso {
+    flex: 1; /* Faz a barra de progresso ocupar o espaço disponível */
+    height: 5px; /* Altura da barra */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #5053F8; /* Cor da barra */
+    appearance: none; /* Remove estilos padrão */
+}
+
+#progresso::-webkit-slider-thumb {
+    appearance: none; /* Remove estilos padrão */
+    width: 10px; /* Largura do indicador */
+    height: 10px; /* Altura do indicador */
+    border-radius: 50%; /* Bordas arredondadas */
+    background-color: #6e6ed3; /* Cor do indicador */
+}
+
+.controles {
+    display: flex; /* Organiza os botões horizontalmente */
+    justify-content: center; /* Centraliza os botões */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.controles button {
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Remove bordas padrão */
+    background-color: #5053F8; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Define o cursor como ponteiro */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+.controles button:hover {
+    background-color: #6e6ed3; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* CALENDÁRIO */
+.calendario-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    height: 315px;
+    margin-top: 50px;
+    border: 5px solid #5053F8;
+    border-radius: 20px;
+}
+
+.dias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dias button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button prevMonth, button nextMonth {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.dias h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.dias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.mes {
+    padding: 5px;
+}
+
+.meses {
+    background-color: #EEF8FF;
+    color: #000;
+    border: 2px solid #5053F8;
+    border-radius: 5px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.calendar-grid-header, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 colunas para os 7 dias da semana */
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-grid-header span {
+    font-weight: bold;
+    color: #555;
+    padding: 5px 0;
+}
+
+.calendar-grid div {
+    padding: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-grid div:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-grid div.today {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    width: 25px;
+    height: 15px;
+    margin-top: 0;
+}
+
+/* CALCULADORA */
+.calculadora { 
+    align-items: center;
+    justify-content: center;
+    background: #e0e3eb;
+    margin-top: 20px;
+    border: 5px solid #5053F8;
+}
+
+.calculadora {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: black;
+    pointer-events: none;
+}
+
+.buttonsCalculadora {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.buttonsCalculadora button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #3c3f3f3c;
+}
+
+.buttonsCalculadora button:active {
+    transform: scale(0.99);
+}
+
+.operator {
+    color: rgb(0, 153, 255);
+}
+
+/* RESPONSIVIDADE */
+/* Estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .geral {
+        flex-direction: column; 
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .menu {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .quadroDesenho {
+        width: 100%; 
+        height: auto; 
+        margin: 0 auto; 
+    }
+
+    .area-desenho {
+        height: auto; 
+    }
+
+    .lista-tarefas {
+        width: 100%; 
+        margin: 20px 0; 
+    }
+
+    .camera {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    #musica {
+        width: 100%; 
+        margin: 20px 0; 
+    }
+
+    .calendario-container {
+        width: 100%; 
+        margin: 20px 0;
+    }
+
+    .calculadora {
+        width: 100%;
+        margin: 20px 0; 
+    }
+}
+
+/* Estilos para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+    .menu {
+        padding: 5px; 
+    }
+
+    .botao-salvar {
+        padding: 8px 15px; 
+        font-size: 14px;
+    }
+
+    .opcoes-desenho button {
+        font-size: 12px; 
+        padding: 5px 8px; 
+    }
+
+    .lista-tarefas input[type="text"] {
+        width: calc(100% - 90px);
+    }
+
+    .lista-tarefas button {
+        padding: 8px 12px; 
+        font-size: 14px; 
+    }
+
+    .camera {
+        gap: 5px; 
+    }
+
+    #musica {
+        padding: 10px; 
+    }
+
+    .calculadora {
+        padding: 10px; 
+    }
+}
